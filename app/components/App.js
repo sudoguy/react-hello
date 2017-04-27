@@ -1,26 +1,36 @@
-var React = require('react');
+import React from 'react';
 
-function AllNamesList (props) {
+import AppBar from 'material-ui/AppBar';
+import createReactClass from 'create-react-class';
+import MyAwesomeComponent from './MyAwesomeReactComponent';
+
+import injectTapEventPlugin from "react-tap-event-plugin";
+injectTapEventPlugin();
+
+function AllNamesList(props) {
   const names = props.names;
-  const listNames = names.map((name) =>
-    <li key={name.toString()}>{name}</li>
-  );
+  const listNames = names.map((name) => <li key={name.toString()}>{name}</li>);
   return (
     <ul>{listNames}</ul>
   );
 }
 
-const myNames = ['allo', 'yoba', 'etoti'];
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-var App = React.createClass({
-  render: function () {
+  myNames = ['allo', 'yoba', 'etoti'];
+
+  render() {
     return (
       <div>
-        <h1>Hello!</h1>
-        <AllNamesList names={myNames} />
+        <AppBar title='Hello React!'/>
+        <AllNamesList names={this.myNames}/>
+        <MyAwesomeComponent label='Vasiliy'/>
       </div>
     );
   }
-});
+}
 
-module.exports = App;
+export default App;
