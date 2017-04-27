@@ -1,7 +1,6 @@
 import React from 'react';
 
 import AppBar from 'material-ui/AppBar';
-import createReactClass from 'create-react-class';
 import MyAwesomeComponent from './MyAwesomeReactComponent';
 
 import injectTapEventPlugin from "react-tap-event-plugin";
