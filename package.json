@@ -9,10 +9,9 @@
     "start-prod": "webpack-dev-server -p --config ./webpack.config.prod.js",
     "build-prod": "webpack -p --config ./webpack.config.prod.js"
   },
-  "author": "",
+  "author": "sudoguy",
   "license": "ISC",
   "dependencies": {
-    "create-react-class": "^15.5.2",
     "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
