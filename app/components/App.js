@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AppBar from 'material-ui/AppBar';
 import MyAwesomeComponent from './MyAwesomeReactComponent';
+import Menu from './Menu';
 
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
@@ -24,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <AppBar title='Hello React!'/>
+        <Menu/>
         <AllNamesList names={this.myNames}/>
         <MyAwesomeComponent label='Vasiliy'/>
       </div>
