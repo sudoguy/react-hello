@@ -1,5 +1,6 @@
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // var CompressionPlugin = require('compression-webpack-plugin');
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -36,6 +37,11 @@ module.exports = {
     //   threshold: 10240,
     //   minRatio: 0.8
     // }),
+    new CopyWebpackPlugin([
+         {from: 'app/static/css', to: 'css'},
+         {from: 'app/static/images', to: 'images'},
+         {from: 'app/index.html'},
+    ]),
     HTMLWebpackPluginConfig
   ]
 };
