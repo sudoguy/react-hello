@@ -2,6 +2,7 @@ import React from 'react';
 
 import MyAwesomeComponent from './MyAwesomeReactComponent';
 import Menu from './Menu';
+import ListNames from './ListNames';
 
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
@@ -26,6 +27,8 @@ class App extends React.Component {
       <div>
         <Menu/>
         <AllNamesList names={this.myNames}/>
+        <AllNamesList names={this.props.name}/>
+        <ListNames name={this.props.name}/>
         <MyAwesomeComponent label='Vasiliy'/>
       </div>
     );

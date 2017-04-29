@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
-    "start-prod": "webpack-dev-server -p --config ./webpack.config.prod.js",
-    "build-prod": "webpack -p --config ./webpack.config.prod.js"
+    "build": "webpack --progress --color",
+    "start": "webpack-dev-server --progress --color",
+    "start-prod": "webpack-dev-server -p --config ./webpack.config.prod.js --progress --color",
+    "build-prod": "webpack -p --config ./webpack.config.prod.js --progress --color"
   },
   "author": "sudoguy",
   "license": "ISC",

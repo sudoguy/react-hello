@@ -14,7 +14,11 @@ const styles = {
     fontWeight: typography.fontWeightLight,
     backgroundColor: cyan500,
     paddingLeft: spacing.desktopGutter,
-    marginBottom: 8,
+    marginBottom: 8
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 };
 
@@ -22,10 +26,14 @@ export default class DrawerSimpleExample extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      open: false
+    };
   }
 
-  handleToggle = () => this.setState({open: !this.state.open});
+  handleToggle = () => this.setState({
+    open: !this.state.open
+  });
 
   handleClose = () => this.setState({open: false});
 
@@ -33,14 +41,9 @@ export default class DrawerSimpleExample extends React.Component {
     return (
       <div>
 
-        <AppBar title='Hello React!' onLeftIconButtonTouchTap={this.handleToggle} />
+        <AppBar titleStyle={styles.header} title='Hello, React!' onLeftIconButtonTouchTap={this.handleToggle}/>
 
-        <Drawer
-          docked={false}
-          width={200}
-          open={this.state.open}
-          onRequestChange={(open) => this.setState({open})}
-        >
+        <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
           <div style={styles.logo} onTouchTap={this.handleClose}>Header</div>
           <MenuItem onTouchTap={this.handleClose}>Yoba</MenuItem>
           <MenuItem onTouchTap={this.handleClose}>Tester</MenuItem>
